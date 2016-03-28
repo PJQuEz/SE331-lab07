@@ -53,6 +53,6 @@ public class DbProductDao implements ProductDao {
 
     @Override
     public List<Product> getProductsByName(String name) {
-        return productRepository.findByNameContainingIgnoreCase(name);
+        return productRepository.findByNameOrDescriptionContainingIgnoreCase(name,name);
     }
 }
